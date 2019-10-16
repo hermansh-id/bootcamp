@@ -3,6 +3,7 @@
 require_once("../db_config.php");
 
 // checking if the update button was clicked
+// FILTER_SANITIZE_STRING removes tags and special encoding characters from the string
 if (isset($_POST['createRecord'])) {
     $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
     $author = filter_var($_POST['author'], FILTER_SANITIZE_STRING);

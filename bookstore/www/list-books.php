@@ -1,6 +1,7 @@
 <?php
-
+// The require_once statement is identical to require except PHP will check if the file has already been included, and if so, not include (require) it again.
 require_once("../db_config.php");
+
 
 $query = "SELECT * FROM books";
 

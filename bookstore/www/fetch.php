@@ -19,4 +19,4 @@
   print_r($result);
 
   echo "<br>";
-  echo $result['title'];
+  echo $result['Title'];
