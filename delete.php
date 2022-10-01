@@ -30,26 +30,26 @@ if (!isset($_GET['id'])) {
 ?>
 
 <!DOCTYPE html>
-<_____ lang="en">
+<html lang="en">
 
-  <_____>
+  <head>
     <meta charset="UTF-8">
     <title>Delete record</title>
-    <_____ rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    </_____>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </link>
 
-    <_____>
+    <body>
       <div class="container">
         <?php
         // percabangan
-        _____ ($rowsDeleted == 1) {
+        if ($rowsDeleted == 1) {
         ?>
           <div class="alert alert-info mt-3" role="alert">
             The record has been deleted!
           </div>
         <?php
         }
-        _____ {
+        else {
         ?>
           <div class="alert alert-danger mt-3" role="alert">
             The record has not been deleted!
@@ -60,6 +60,6 @@ if (!isset($_GET['id'])) {
         <a href="_____" class="btn btn-primary">Back</a>
 
       </div>
-    </_____>
+    </body>
 
-  </_____>
+  </head>
