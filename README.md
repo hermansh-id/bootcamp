@@ -1,4 +1,4 @@
 # BOOTCAMP
 
-1. Nama : ____
-2. NPM  : ____
+1. Nama : Kamilah Insani
+2. NPM  : 217006082
