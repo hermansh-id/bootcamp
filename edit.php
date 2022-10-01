@@ -1,24 +1,24 @@
 <?php
-require_once('../db_config.php');
+require_once('db_config.php');
 
 // error catching
 if (!isset($_GET['id'])) {
 //   redirect user to the main page on error
-  header('Location: list-books.php');
+  header('Location: index.php');
 //   echo "Record does not exist";
   die();
 } else {
   $id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
 //   checking if id is int
   if (!$id) {
-  header('Location: list-books.php');
+  header('Location: index.php');
   die();
   } else {
     // maximum 1 record, :id is a placeholder
-    $query = "SELECT * FROM books WHERE id = :id LIMIT 1";
+    $query = "SELECT * _____ _____ WHERE id = :id";
     $result = $db_connection->prepare($query);
     // create array
-    $result->execute([
+    $result->_____([
       'id' => $id,
     ]);
 
@@ -45,37 +45,37 @@ if (!isset($_GET['id'])) {
         <div class="form-group row">
           <label for="id" class="col-sm-2 col-form-label">ID</label>
           <div class="col-sm-10">
-            <input type="number" readonly class="form-control" id="id" name="id" value="<?php echo $result['id'] ?>">
+            <input type="number" readonly class="form-control" id="id" name="id" value="<?php echo $result['_____'] ?>">
           </div>
         </div>
         <div class="form-group row">
           <label for="title" class="col-sm-2 col-form-label">Title</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="title" name="title" value="<?php echo $result['Title'] ?>">
+            <input type="text" class="form-control" id="title" name="title" value="<?php echo $result['_____'] ?>">
           </div>
         </div>
         <div class="form-group row">
           <label for="author" class="col-sm-2 col-form-label">Author</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="author" name="author" value="<?php echo $result['Author'] ?>">
+            <input type="text" class="form-control" id="author" name="author" value="<?php echo $result['_____'] ?>">
           </div>
         </div>
         <div class="form-group row">
           <label for="genre" class="col-sm-2 col-form-label">Genre</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="genre" name="genre" value="<?php echo $result['Genre'] ?>">
+            <input type="text" class="form-control" id="genre" name="genre" value="<?php echo $result['_____'] ?>">
           </div>
         </div>
         <div class="form-group row">
           <label for="height" class="col-sm-2 col-form-label">Height</label>
           <div class="col-sm-10">
-            <input type="number" class="form-control" id="height" name="height" value="<?php echo $result['Height'] ?>">
+            <input type="number" class="form-control" id="height" name="height" value="<?php echo $result['_____'] ?>">
           </div>
         </div>
         <div class="form-group row">
           <label for="publisher" class="col-sm-2 col-form-label">Publisher</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="publisher" name="publisher" value="<?php echo $result['Publisher'] ?>">
+            <input type="text" class="form-control" id="publisher" name="publisher" value="<?php echo $result['_____'] ?>">
           </div>
         </div>
 
