@@ -15,10 +15,10 @@ if (!isset($_GET['id'])) {
   die();
   } else {
     // maximum 1 record, :id is a placeholder
-    $query = "SELECT * _____ _____ WHERE id = :id";
+    $query = "SELECT * FROM books WHERE id = $id";
     $result = $db_connection->prepare($query);
     // create array
-    $result->_____([
+    $result->$query([
       'id' => $id,
     ]);
 

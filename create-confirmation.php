@@ -1,6 +1,6 @@
 <?php
 // import file
-_____("db_config.php");
+include ("db_config.php");
 ?>
 
 <!DOCTYPE html>
@@ -8,8 +8,8 @@ _____("db_config.php");
 
 <head>
   <meta charset="UTF-8">
-  <_____>Delete record</_____>
-  <_____ rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Delete record</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
 <body>
@@ -18,7 +18,7 @@ _____("db_config.php");
       The record has been created!
     </div>
     <!-- link ke index.php -->
-    <_____ href="_____" class="btn btn-primary">Back</_____>
+    <a href="index.php" class="btn btn-primary">Back</a>
   </div>
 </body>
 
