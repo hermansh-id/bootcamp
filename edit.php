@@ -15,10 +15,10 @@ if (!isset($_GET['id'])) {
   die();
   } else {
     // maximum 1 record, :id is a placeholder
-    $query = "SELECT * FROM books WHERE id = $id";
+    $query = "SELECT * FROM books WHERE id = :id";
     $result = $db_connection->prepare($query);
     // create array
-    $result->$query([
+    $result->execute([
       'id' => $id,
     ]);
 
@@ -45,37 +45,37 @@ if (!isset($_GET['id'])) {
         <div class="form-group row">
           <label for="id" class="col-sm-2 col-form-label">ID</label>
           <div class="col-sm-10">
-            <input type="number" readonly class="form-control" id="id" name="id" value="<?php echo $result['_____'] ?>">
+            <input type="number" readonly class="form-control" id="id" name="id" value="<?php echo $result['id'] ?>">
           </div>
         </div>
         <div class="form-group row">
           <label for="title" class="col-sm-2 col-form-label">Title</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="title" name="title" value="<?php echo $result['_____'] ?>">
+            <input type="text" class="form-control" id="title" name="title" value="<?php echo $result['title'] ?>">
           </div>
         </div>
         <div class="form-group row">
           <label for="author" class="col-sm-2 col-form-label">Author</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="author" name="author" value="<?php echo $result['_____'] ?>">
+            <input type="text" class="form-control" id="author" name="author" value="<?php echo $result['author'] ?>">
           </div>
         </div>
         <div class="form-group row">
           <label for="genre" class="col-sm-2 col-form-label">Genre</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="genre" name="genre" value="<?php echo $result['_____'] ?>">
+            <input type="text" class="form-control" id="genre" name="genre" value="<?php echo $result['genre'] ?>">
           </div>
         </div>
         <div class="form-group row">
           <label for="height" class="col-sm-2 col-form-label">Height</label>
           <div class="col-sm-10">
-            <input type="number" class="form-control" id="height" name="height" value="<?php echo $result['_____'] ?>">
+            <input type="number" class="form-control" id="height" name="height" value="<?php echo $result['height'] ?>">
           </div>
         </div>
         <div class="form-group row">
           <label for="publisher" class="col-sm-2 col-form-label">Publisher</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="publisher" name="publisher" value="<?php echo $result['_____'] ?>">
+            <input type="text" class="form-control" id="publisher" name="publisher" value="<?php echo $result['publisher'] ?>">
           </div>
         </div>
 

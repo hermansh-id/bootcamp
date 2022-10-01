@@ -16,7 +16,7 @@ if (!isset($_GET['id'])) {
     die();
   } else {
     // maximum 1 record, :id is a placeholder
-    $query = "DELETE FROM books WHERE id = $id LIMIT 1";
+    $query = "DELETE FROM books WHERE id = :id";
     $result = $db_connection->prepare($query);
     // create array
     $result->execute([

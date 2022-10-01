@@ -10,15 +10,15 @@ if (isset($_POST['createRecord'])) {
   $genre = filter_var($_POST['genre'], FILTER_SANITIZE_STRING);
   $height = filter_var($_POST['height'], FILTER_SANITIZE_NUMBER_INT);
   $publisher = filter_var($_POST['publisher'], FILTER_SANITIZE_STRING);
-  $query = "SELECT * FROM books (title, author, genre, height, publisher)
-            INSERT INTO books VALUES ('$title', '$author', '$genre', '$height', '$publisher')";
+  $query = "INSERT INTO books(title, author, genre, height, publisher)
+            VALUES(':title', :author, :genre, :height, :publisher)";
   $result = $db_connection->prepare($query);
   $result->execute([
-    'title' => $title,
-    'author' => $author,
-    'genre' => $genre,
-    'height' => $height,
-    'publisher' => $publisher,
+    ':title' => $title,
+    ':author' => $author,
+    ':genre' => $genre,
+    ':height' => $height,
+    ':publisher' => $publisher,
   ]);
 
   $rowsCreated = $result->rowCount();
@@ -43,31 +43,31 @@ if (isset($_POST['createRecord'])) {
       <div class="form-group row">
         <label for="title" class="col-sm-2 col-form-label">Title</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="title" name="title" value="">
+          <input type="text" class="form-control" id="title" name="title">
         </div>
       </div>
       <div class="form-group row">
         <label for="author" class="col-sm-2 col-form-label">Author</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="author" name="author" value="">
+          <input type="text" class="form-control" id="author" name="author">
         </div>
       </div>
       <div class="form-group row">
         <label for="genre" class="col-sm-2 col-form-label">Genre</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="genre" name="genre" value="">
+          <input type="text" class="form-control" id="genre" name="genre">
         </div>
       </div>
       <div class="form-group row">
         <label for="height" class="col-sm-2 col-form-label">Height</label>
         <div class="col-sm-10">
-          <input type="number" class="form-control" id="height" name="height" value="">
+          <input type="number" class="form-control" id="height" name="height">
         </div>
       </div>
       <div class="form-group row">
         <label for="publisher" class="col-sm-2 col-form-label">Publisher</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="publisher" name="publisher" value="">
+          <input type="text" class="form-control" id="publisher" name="publisher">
         </div>
       </div>
 
