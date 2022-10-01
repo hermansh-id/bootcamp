@@ -3,7 +3,7 @@
 require_once("db_config.php");
 
 
-$query = "_____ * FROM _____";
+$query = "SELECT * FROM books";
 
 $results = $db_connection->query($query);
 ?>
@@ -36,13 +36,13 @@ $results = $db_connection->query($query);
       <tbody>
         <?php
         // gunakan pengulangan
-        _____ ($results as $_____) {
+        if ($results as $result) {
         ?>
           <tr>
-            <td><?php echo $_____['Title'] ?></td>
-            <td><?php echo $_____['Author'] ?></td>
-            <td><?php echo $_____['Genre'] ?></td>
-            <td><?php echo $_____['Publisher'] ?></td>
+            <td><?php echo $title['Title'] ?></td>
+            <td><?php echo $author['Author'] ?></td>
+            <td><?php echo $genre['Genre'] ?></td>
+            <td><?php echo $publisher['Publisher'] ?></td>
             <td><a href="edit.php?id=<?php echo $result['id'] ?>"><i class="fas fa-edit"></i></a></td>
             <td><a href="delete.php?id=<?php echo $result['id'] ?>"><i class="fas fa-trash-alt"></i></a></td>
           </tr>
