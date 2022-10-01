@@ -1,4 +1,4 @@
 # BOOTCAMP
 
-1. Nama : ____
-2. NPM  : ____
+1. Nama : Nugi Nugraha
+2. NPM  : 217006001
