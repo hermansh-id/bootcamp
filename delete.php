@@ -1,19 +1,19 @@
-<?php
+<?php 
 
 require_once("db_config.php");
 
 // error catching
 if (!isset($_GET['id'])) {
-  //   redirect user to the main page on error
-  header('Location: index.php');
-  //   echo "Record does not exist";
+//   redirect user to the main page on error
+  header('Location: list-books.php');
+//   echo "Record does not exist";
   die();
 } else {
   $id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
-  //   checking if id is int
+//   checking if id is int
   if (!$id) {
-    header('Location: index.php');
-    die();
+  header('Location: list-books.php');
+  die();
   } else {
     // maximum 1 record, :id is a placeholder
     $query = "DELETE FROM books WHERE id = :id LIMIT 1";
@@ -30,36 +30,33 @@ if (!isset($_GET['id'])) {
 ?>
 
 <!DOCTYPE html>
-<_____ lang="en">
+<html lang="en">
 
-  <_____>
+<head>
     <meta charset="UTF-8">
     <title>Delete record</title>
-    <_____ rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    </_____>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
 
-    <_____>
-      <div class="container">
-        <?php
-        // percabangan
-        _____ ($rowsDeleted == 1) {
-        ?>
-          <div class="alert alert-info mt-3" role="alert">
+<body>
+    <div class="container">
+        <?php 
+      if ($rowsDeleted == 1) {
+     ?>
+        <div class="alert alert-info mt-3" role="alert">
             The record has been deleted!
-          </div>
+        </div>
         <?php
-        }
-        _____ {
-        ?>
-          <div class="alert alert-danger mt-3" role="alert">
+      } else {
+    ?>
+        <div class="alert alert-danger mt-3" role="alert">
             The record has not been deleted!
-          </div>
+        </div>
         <?php
-        }
-        ?>
-        <a href="_____" class="btn btn-primary">Back</a>
+      }
+    ?>
+    </div>
+</body>
 
-      </div>
-    </_____>
-
-  </_____>
+</html>
