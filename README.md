@@ -1,4 +1,4 @@
 # BOOTCAMP
 
-1. Nama : ____
-2. NPM  : ____
+1. Nama : Reva Arya Maulana
+2. NPM  : 217006092
