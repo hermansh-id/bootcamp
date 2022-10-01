@@ -1,4 +1,4 @@
 # BOOTCAMP
 
-1. Nama : ____
-2. NPM  : ____
+1. Nama : Bakti Fatriamis
+2. NPM  : 217006084
