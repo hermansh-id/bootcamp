@@ -3,7 +3,7 @@
 require_once("db_config.php");
 
 
-$query = "_____ * FROM _____";
+$query = "SELECT * FROM books";
 
 $results = $db_connection->query($query);
 ?>
@@ -11,47 +11,48 @@ $results = $db_connection->query($query);
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Bookstore</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/23032ab857.js" crossorigin="anonymous"></script>
+   <meta charset="UTF-8">
+   <title>Bookstore</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   <script src="https://kit.fontawesome.com/23032ab857.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class="container">
-    <div class="mt-3">
-      <a href="create.php">Create new record</a>
-    </div>
-    <table class="table mt-3">
-      <thead>
-        <tr>
-          <th>TITLE</th>
-          <th>AUTHOR</th>
-          <th>GENRE</th>
-          <th>PUBLISHER</th>
-          <th>EDIT</th>
-          <th>DELETE</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
+   <div class="container">
+      <div class="mt-3">
+         <a href="create.php">Create new record</a>
+      </div>
+      <table class="table mt-3">
+         <thead>
+            <tr>
+               <th>TITLE</th>
+               <th>AUTHOR</th>
+               <th>GENRE</th>
+               <th>PUBLISHER</th>
+               <th>EDIT</th>
+               <th>DELETE</th>
+            </tr>
+         </thead>
+         <tbody>
+            <?php
         // gunakan pengulangan
-        _____ ($results as $_____) {
+        foreach ($results as $result) {
         ?>
-          <tr>
-            <td><?php echo $_____['Title'] ?></td>
-            <td><?php echo $_____['Author'] ?></td>
-            <td><?php echo $_____['Genre'] ?></td>
-            <td><?php echo $_____['Publisher'] ?></td>
-            <td><a href="edit.php?id=<?php echo $result['id'] ?>"><i class="fas fa-edit"></i></a></td>
-            <td><a href="delete.php?id=<?php echo $result['id'] ?>"><i class="fas fa-trash-alt"></i></a></td>
-          </tr>
-        <?php
+            <tr>
+               <td><?php echo $result['title'] ?></td>
+               <td><?php echo $result['author'] ?></td>
+               <td><?php echo $result['genre'] ?></td>
+               <td><?php echo $result['publisher'] ?></td>
+               <td><a href="edit.php?id=<?php echo $result['id'] ?>"><i class="fas fa-edit"></i></a></td>
+               <td><a href="delete.php?id=<?php echo $result['id'] ?>"><i class="fas fa-trash-alt"></i></a></td>
+            </tr>
+            <?php
         }
         ?>
-      </tbody>
-    </table>
-  </div>
+         </tbody>
+      </table>
+   </div>
 </body>
 
 </html>

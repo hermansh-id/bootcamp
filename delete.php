@@ -30,36 +30,37 @@ if (!isset($_GET['id'])) {
 ?>
 
 <!DOCTYPE html>
-<_____ lang="en">
+<html lang="en">
 
-  <_____>
-    <meta charset="UTF-8">
-    <title>Delete record</title>
-    <_____ rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    </_____>
+<head>
+   <meta charset="UTF-8">
+   <title>Delete record</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   </link>
 
-    <_____>
-      <div class="container">
-        <?php
+<body>
+   <div class="container">
+      <?php
         // percabangan
-        _____ ($rowsDeleted == 1) {
+        if ($rowsDeleted == 1) {
         ?>
-          <div class="alert alert-info mt-3" role="alert">
-            The record has been deleted!
-          </div>
-        <?php
-        }
-        _____ {
-        ?>
-          <div class="alert alert-danger mt-3" role="alert">
-            The record has not been deleted!
-          </div>
-        <?php
-        }
-        ?>
-        <a href="_____" class="btn btn-primary">Back</a>
-
+      <div class="alert alert-info mt-3" role="alert">
+         The record has been deleted!
       </div>
-    </_____>
+      <?php
+        }
+        else {
+        ?>
+      <div class="alert alert-danger mt-3" role="alert">
+         The record has not been deleted!
+      </div>
+      <?php
+        }
+        ?>
+      <a href="index.php" class="btn btn-primary">Back</a>
 
-  </_____>
+   </div>
+</body>
+
+</html>
